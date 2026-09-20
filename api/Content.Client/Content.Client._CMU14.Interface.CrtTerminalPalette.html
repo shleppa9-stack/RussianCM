@@ -1,0 +1,844 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CrtTerminalPalette
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CrtTerminalPalette
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette">
+  
+  
+  <h1 id="Content_Client__CMU14_Interface_CrtTerminalPalette" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette" class="text-break">Class CrtTerminalPalette
+  </h1>
+  <div class="markdown level0 summary"><p>The surface ladder and text tones the CRT theme is built from - and the neutral ladder that
+stands in for it when the theme is switched off.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CrtTerminalPalette</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Client._CMU14.Interface.html">Content.Client._CMU14.Interface</a></h6>
+  <h6><strong>Assembly</strong>: Content.Client.dll</h6>
+  <h5 id="Content_Client__CMU14_Interface_CrtTerminalPalette_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class CrtTerminalPalette : object</code></pre>
+  </div>
+  <h5 id="Content_Client__CMU14_Interface_CrtTerminalPalette_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+The shipped palette derived all eighteen of its colours from one hue and packed every surface
+between <code>#000906</code> and <code>#032314</code> - about five percent of the luminance range, all of
+it near-black. Three problems followed from that one fact, and all three showed up in
+practice: surfaces could not be told apart by fill, so every boundary had to be a border,
+which is what produces the box-in-box look; nothing could signal danger, because a fill could
+only ever be the theme colour brighter; and a scanline had no luminance to modulate, so it was
+either invisible or a colour cast.
+</p>
+<p>
+This ladder fixes the cause rather than the symptoms. Four surface steps, each visibly lighter
+than the last, so a panel can sit inside a panel and be read as separate without a rule
+between them. Text is genuinely bright - an Aliens terminal is high contrast, dim green on
+black is a different look entirely. Caution and alert are off-hue on purpose.
+</p>
+<p>
+<strong>Every member is a property, not a field, and every one of them is mode-aware.</strong> That is
+the whole reason this file reads the way it does. These used to be plain constants, so a
+control wearing a <code>Crt*</code> style class kept its green fill after the theme was switched
+off - and since the XAML names those classes directly, that was most of the lobby. Turning
+the theme off left a green UI in a proportional font, which is nobody&apos;s design.
+<a class="xref" href="Content.Client.Stylesheets.StyleNano.html">StyleNano</a>&apos;s own colours had always fallen back; this file was the one that did
+not.
+</p>
+<p>
+The off values are the stock NanoUI greys, keyed to what each step is used *for* rather than
+to its green&apos;s luminance: the panel steps land on the existing neutral panel colours, and the
+interactive steps land on NanoUI&apos;s own button colours, so a button in base mode is the slate
+it always was.
+</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_ChannelToneLuminance.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.ChannelToneLuminance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L142">View Source</a>
+  </span>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_ChannelToneLuminance" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.ChannelToneLuminance">ChannelToneLuminance</h4>
+  <div class="markdown level1 summary"><p>Luminance every channel tone is pinned to. Below <a class="xref" href="Content.Client._CMU14.Interface.CrtTerminalPalette.html#Content_Client__CMU14_Interface_CrtTerminalPalette_Text">Text</a>'s own (~0.82) because
+blue and violet cannot reach that - a strict pin would clamp them at full value and hand
+back the neon primaries this palette exists to avoid. Every hue is reachable here.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float ChannelToneLuminance = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_ChannelToneSaturation.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.ChannelToneSaturation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L148">View Source</a>
+  </span>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_ChannelToneSaturation" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.ChannelToneSaturation">ChannelToneSaturation</h4>
+  <div class="markdown level1 summary"><p>Saturation of a channel tone. Enough to tell nine channels apart at a glance, low enough
+that they still read as tinted phosphor rather than as arbitrary UI colours.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float ChannelToneSaturation = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_ChatTintSaturationFull.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.ChatTintSaturationFull%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L117">View Source</a>
+  </span>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_ChatTintSaturationFull" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.ChatTintSaturationFull">ChatTintSaturationFull</h4>
+  <div class="markdown level1 summary"><p>Saturation of a chat row tint at full strength: <a class="xref" href="Content.Client._CMU14.Interface.CrtTerminalPalette.html#Content_Client__CMU14_Interface_CrtTerminalPalette_Surface2">Surface2</a>'s own, so a green
+channel lands exactly on that rung and every other hue is that same rung rotated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float ChatTintSaturationFull = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_ChatTintSaturationMuted.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.ChatTintSaturationMuted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L120">View Source</a>
+  </span>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_ChatTintSaturationMuted" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.ChatTintSaturationMuted">ChatTintSaturationMuted</h4>
+  <div class="markdown level1 summary"><p>Saturation of a muted chat row tint. Same rung, same hues, less of them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float ChatTintSaturationMuted = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Accent.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Accent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L107">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Accent_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Accent*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Accent" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Accent">Accent</h4>
+  <div class="markdown level1 summary"><p>The phosphor itself. Bars, pips, active states. Off-theme it is NanoGold, matching
+<a class="xref" href="Content.Client.Stylesheets.StyleNano.html#Content_Client_Stylesheets_StyleNano_CrtGreen">CrtGreen</a>, which has always fallen back to the same colour - so
+the two ways of asking for &quot;the accent&quot; agree in both modes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Accent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Alert.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Alert%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L111">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Alert_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Alert*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Alert" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Alert">Alert</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Alert { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Caution.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Caution%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L109">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Caution_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Caution*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Caution" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Caution">Caution</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Caution { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Line.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Line%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L91">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Line_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Line*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Line" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Line">Line</h4>
+  <div class="markdown level1 summary"><p>Hairline, for the few places a rule still says something a fill cannot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Line { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Surface0.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Surface0%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L63">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface0_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface0*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface0" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface0">Surface0</h4>
+  <div class="markdown level1 summary"><p>Window body.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Surface0 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Surface1.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Surface1%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L66">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface1_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface1*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface1" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface1">Surface1</h4>
+  <div class="markdown level1 summary"><p>A section or group within the body.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Surface1 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Surface2.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Surface2%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L77">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface2_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface2*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface2" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface2">Surface2</h4>
+  <div class="markdown level1 summary"><p>One row inside a section, and the resting fill of a button.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Surface2 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface2_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Off-theme this has to stay clear of <code>DefaultCrtPanelBackground</code> (#25252A), which is
+what the panels under these rows are painted with. The first pass set it to exactly that
+value and every button on the lobby vanished into the panel behind it - same fill, no
+border, nothing to see. Distinct fills are half the fix; the border below is the rest.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Surface3.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Surface3%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L80">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface3_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface3*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface3" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface3">Surface3</h4>
+  <div class="markdown level1 summary"><p>Header and status strips; hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Surface3 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Surface4.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Surface4%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L88">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface4_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface4*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Surface4" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Surface4">Surface4</h4>
+  <div class="markdown level1 summary"><p>Selected. The ladder needed a fourth step: with only three, hover and selected both landed
+on Surface3 and were indistinguishable, so a selected tab looked exactly like a hovered
+one. Off-theme this is NanoUI's own button colour, which is what a pressed or selected
+control looked like before any of this existed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Surface4 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Text.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Text%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L97">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Text_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Text*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Text" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Text">Text</h4>
+  <div class="markdown level1 summary"><p>Body text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Text { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_TextBright.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.TextBright%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L100">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_TextBright_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.TextBright*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_TextBright" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.TextBright">TextBright</h4>
+  <div class="markdown level1 summary"><p>Headings and values worth reading first.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color TextBright { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_TextDim.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.TextDim%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L94">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_TextDim_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.TextDim*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_TextDim" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.TextDim">TextDim</h4>
+  <div class="markdown level1 summary"><p>Field labels and other secondary text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color TextDim { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_Void.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.Void%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L60">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_Void_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Void*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_Void" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.Void">Void</h4>
+  <div class="markdown level1 summary"><p>Behind everything. Not pure black - a phosphor tube never is.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Void { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_ChannelTone_Robust_Shared_Maths_Color_.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.ChannelTone(Robust.Shared.Maths.Color)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L160">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_ChannelTone_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.ChannelTone*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_ChannelTone_Robust_Shared_Maths_Color_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.ChannelTone(Robust.Shared.Maths.Color)">ChannelTone(Color)</h4>
+  <div class="markdown level1 summary"><p><code data-dev-comment-type="paramref" class="paramref">hue</code> rebuilt at the channel band's fixed luminance and saturation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color ChannelTone(Color hue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td><span class="parametername">hue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Client__CMU14_Interface_CrtTerminalPalette_ChannelTone_Robust_Shared_Maths_Color__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The same trick as <a class="xref" href="Content.Client._CMU14.Interface.CrtTerminalPalette.html#Content_Client__CMU14_Interface_CrtTerminalPalette_ChatRowTint_Robust_Shared_Maths_Color_System_Single_">ChatRowTint(Color, Single)</a>, aimed at text rather than fills: take the hue
+only, and rebuild it at a known luminance. Picking channel colours by eye is what produced
+the shipped set - <code>LightSkyBlue</code>, <code>HotPink</code>, <code>MediumPurple</code> - where the pink
+burns and the purple is nearly unreadable on a dark ground, because equal HSV <em>value</em> is
+nothing like equal brightness across hues.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette_ChatRowTint_Robust_Shared_Maths_Color_System_Single_.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette.ChatRowTint(Robust.Shared.Maths.Color%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L127">View Source</a>
+  </span>
+  <a id="Content_Client__CMU14_Interface_CrtTerminalPalette_ChatRowTint_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.ChatRowTint*"></a>
+  <h4 id="Content_Client__CMU14_Interface_CrtTerminalPalette_ChatRowTint_Robust_Shared_Maths_Color_System_Single_" data-uid="Content.Client._CMU14.Interface.CrtTerminalPalette.ChatRowTint(Robust.Shared.Maths.Color,System.Single)">ChatRowTint(Color, Single)</h4>
+  <div class="markdown level1 summary"><p>A chat row fill carrying <code data-dev-comment-type="paramref" class="paramref">hue</code> at the luminance of <a class="xref" href="Content.Client._CMU14.Interface.CrtTerminalPalette.html#Content_Client__CMU14_Interface_CrtTerminalPalette_Surface2">Surface2</a>,
+the rung announcements already sit on. Pinning luminance rather than HSV value is the
+whole point: at equal value a blue row sinks into the ground while a green one floats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color ChatRowTint(Color hue, float saturation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td><span class="parametername">hue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">saturation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Maths.Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Client__CMU14_Interface_CrtTerminalPalette.md&amp;value=---%0Auid%3A%20Content.Client._CMU14.Interface.CrtTerminalPalette%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Client/_CMU14/Interface/CrtTerminalPalette.cs/#L44" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
