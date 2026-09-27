@@ -1,0 +1,627 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NukeEntitiesCommand
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NukeEntitiesCommand
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand">
+  
+  
+  <h1 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand" class="text-break">Class NukeEntitiesCommand
+  </h1>
+  <div class="markdown level0 summary"><p>Shared plumbing for the nuke:* cleanup commands in this file: [all] bool (default false,
+true = serious cleanup, drops the per-command safety filter) + prototype id filter args,
+batch deletion of collected loose entities, prototype id completion, and the report line.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Robust.Shared.Console.LocalizedCommands</span></div>
+    <div class="level2"><span class="xref">Robust.Shared.Console.LocalizedEntityCommands</span></div>
+    <div class="level3"><span class="xref">NukeEntitiesCommand</span></div>
+      <div class="level4"><a class="xref" href="Content.Server._CMU14.Util.Admin.Console.NukeCartridgesCommand.html">NukeCartridgesCommand</a></div>
+      <div class="level4"><a class="xref" href="Content.Server._CMU14.Util.Admin.Console.NukeMagazinesCommand.html">NukeMagazinesCommand</a></div>
+      <div class="level4"><a class="xref" href="Content.Server._CMU14.Util.Admin.Console.NukePuddlesCommand.html">NukePuddlesCommand</a></div>
+      <div class="level4"><a class="xref" href="Content.Server._CMU14.Util.Admin.Console.NukeTrashCommand.html">NukeTrashCommand</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">Robust.Shared.Console.IConsoleCommand</span></div>
+  </div>
+  <div class="inheritedMembers">
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Server._CMU14.Util.Admin.Console.html">Content.Server._CMU14.Util.Admin.Console</a></h6>
+  <h6><strong>Assembly</strong>: Content.Server.dll</h6>
+  <h5 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class NukeEntitiesCommand : LocalizedEntityCommands, IEntityConsoleCommand, IConsoleCommand</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand__container.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand._container%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L22">View Source</a>
+  </span>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand__container" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand._container">_container</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SharedContainerSystem _container</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Containers.SharedContainerSystem</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand__protoMan.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand._protoMan%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L23">View Source</a>
+  </span>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand__protoMan" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand._protoMan">_protoMan</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IPrototypeManager _protoMan</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.IPrototypeManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_Description.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L25">View Source</a>
+  </span>
+  <a id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_Description_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.Description*"></a>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_Description" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.Description">Description</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Description { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Robust.Shared.Console.LocalizedCommands.Description</span></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_BoolOrIdsCompletion_System_String___System_String_System_String_.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.BoolOrIdsCompletion(System.String%5B%5D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L66">View Source</a>
+  </span>
+  <a id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_BoolOrIdsCompletion_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.BoolOrIdsCompletion*"></a>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_BoolOrIdsCompletion_System_String___System_String_System_String_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.BoolOrIdsCompletion(System.String[],System.String,System.String)">BoolOrIdsCompletion(String[], String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CompletionResult BoolOrIdsCompletion(string[] args, string modeHint, string idHint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">modeHint</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">idHint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CompletionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_DeleteAll_List_EntityUid__.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.DeleteAll(List%7BEntityUid%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L42">View Source</a>
+  </span>
+  <a id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_DeleteAll_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.DeleteAll*"></a>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_DeleteAll_List_EntityUid__" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.DeleteAll(List{EntityUid})">DeleteAll(List&lt;EntityUid&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int DeleteAll(List&lt;EntityUid&gt; toDelete)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">toDelete</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_IdsCompletion_System_String___System_String_.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.IdsCompletion(System.String%5B%5D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L76">View Source</a>
+  </span>
+  <a id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_IdsCompletion_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.IdsCompletion*"></a>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_IdsCompletion_System_String___System_String_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.IdsCompletion(System.String[],System.String)">IdsCompletion(String[], String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CompletionResult IdsCompletion(string[] args, string idHint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">idHint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CompletionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_IncludeProto_Robust_Shared_Prototypes_EntityPrototype_.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.IncludeProto(Robust.Shared.Prototypes.EntityPrototype)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L64">View Source</a>
+  </span>
+  <a id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_IncludeProto_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.IncludeProto*"></a>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_IncludeProto_Robust_Shared_Prototypes_EntityPrototype_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.IncludeProto(Robust.Shared.Prototypes.EntityPrototype)">IncludeProto(EntityPrototype)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool IncludeProto(EntityPrototype proto)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.EntityPrototype</span></td>
+        <td><span class="parametername">proto</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_MatchesIds_MetaDataComponent_System_Nullable_HashSet_System_String___.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.MatchesIds(MetaDataComponent%2CSystem.Nullable%7BHashSet%7BSystem.String%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L39">View Source</a>
+  </span>
+  <a id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_MatchesIds_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.MatchesIds*"></a>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_MatchesIds_MetaDataComponent_System_Nullable_HashSet_System_String___" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.MatchesIds(MetaDataComponent,System.Nullable{HashSet{System.String}})">MatchesIds(MetaDataComponent, Nullable&lt;HashSet&lt;String&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static bool MatchesIds(MetaDataComponent meta, HashSet&lt;string&gt;? ids)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">MetaDataComponent</span></td>
+        <td><span class="parametername">meta</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">HashSet</span>&lt;<span class="xref">System.String</span>&gt;&gt;</td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_ParseBoolAndIds_System_String___.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.ParseBoolAndIds(System.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L27">View Source</a>
+  </span>
+  <a id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_ParseBoolAndIds_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.ParseBoolAndIds*"></a>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_ParseBoolAndIds_System_String___" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.ParseBoolAndIds(System.String[])">ParseBoolAndIds(String[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static (bool All, HashSet&lt;string&gt;? Ids) ParseBoolAndIds(string[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Boolean</span>, <span class="xref">System.Nullable</span>&lt;<span class="xref">HashSet</span>&lt;<span class="xref">System.String</span>&gt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_ReportRemoved_Robust_Shared_Console_IConsoleShell_System_Int32_System_String_System_Nullable_HashSet_System_String___System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.ReportRemoved(Robust.Shared.Console.IConsoleShell%2CSystem.Int32%2CSystem.String%2CSystem.Nullable%7BHashSet%7BSystem.String%7D%7D%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L57">View Source</a>
+  </span>
+  <a id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_ReportRemoved_" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.ReportRemoved*"></a>
+  <h4 id="Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand_ReportRemoved_Robust_Shared_Console_IConsoleShell_System_Int32_System_String_System_Nullable_HashSet_System_String___System_Nullable_System_String__" data-uid="Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand.ReportRemoved(Robust.Shared.Console.IConsoleShell,System.Int32,System.String,System.Nullable{HashSet{System.String}},System.Nullable{System.String})">ReportRemoved(IConsoleShell, Int32, String, Nullable&lt;HashSet&lt;String&gt;&gt;, Nullable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ReportRemoved(IConsoleShell shell, int removed, string noun, HashSet&lt;string&gt;? ids, string? modeSuffix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Console.IConsoleShell</span></td>
+        <td><span class="parametername">shell</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">removed</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">noun</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">HashSet</span>&lt;<span class="xref">System.String</span>&gt;&gt;</td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">modeSuffix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Robust.Shared.Console.IConsoleCommand</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/shleppa9-stack/RussianCM/new/master/apiSpec/new?filename=Content_Server__CMU14_Util_Admin_Console_NukeEntitiesCommand.md&amp;value=---%0Auid%3A%20Content.Server._CMU14.Util.Admin.Console.NukeEntitiesCommand%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/shleppa9-stack/RussianCM/blob/master/Content.Server/_CMU14/Util/Admin/Console/NukeEntitiesCommand.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
